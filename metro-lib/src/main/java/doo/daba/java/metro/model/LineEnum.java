@@ -1,10 +1,10 @@
 package doo.daba.java.metro.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.util.Arrays;
-
+/**
+ * Valores permitidos para indicar los numeros de las lineas
+ */
 public enum LineEnum {
   LINEA_1("Línea 1"),
   LINEA_2("Línea 2"),
@@ -28,6 +28,12 @@ public enum LineEnum {
     this.name = name;
   }
 
+  /**
+   * Mediante el valor del texto del nombre de la linea se busca el {@code Enum} correspondiente
+   *
+   * @param name
+   * @return Enum que representa a la linea de acuerdo al texto recibido
+   */
   public static LineEnum fromName(String name) {
     for (LineEnum e : LineEnum.values()) {
       if (e.getName().equals(name)) return e;
